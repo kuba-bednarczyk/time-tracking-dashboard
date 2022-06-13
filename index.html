@@ -1,22 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/main.css">
   <title>Frontend Mentor | Time tracking dashboard</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
-<body>
+  <body>
+      <section class="container">
+          <section class="activity-menu">
+            <div class="activity-menu__person">
+              <img src="./images/image-jeremy.png" alt="profile-pic">
+              <div class="text">
+                <p>Report for</p>
+                <h1>Jeremy Robson</h1>
+              </div>
 
+            </div>
+            <div class="activity-menu__options">
+              <a class="daily">Daily</a>
+              <a class="weekly">Weekly</a>
+              <a class="monthly">Monthly</a>
+            </div>
+          </section>
 
-  
-</body>
+          <section class="activity-box activity-box__work">
+            <div class="activity-time">
+              <div class="activity-time__heading">
+                <h1>Work</h1>
+                <div class="activity-time__icon"></div>
+              </div>
+              <div class="activity-time__timeframe">
+                <p><span class="current">32</span>hrs</p>
+                <p>Last Week - <span class="previous">36</span>hrs</p>
+              </div>
+            </div>
+          </section>
+          <section class="activity-box activity-box__play">
+            <div class="activity-time">
+              <div class="activity-time__heading">
+                <h1>Play</h1>
+                <div class="activity-time__icon"></div>
+              </div>
+              <div class="activity-time__timeframe">
+                <p><span class="current">32</span>hrs</p>
+                <p>Last Week - <span class="previous">36</span>hrs</p>
+              </div>
+            </div>
+          </section>
+          <section class="activity-box activity-box__study">
+            <div class="activity-time">
+              <div class="activity-time__heading">
+                <h1>Study</h1>
+                <div class="activity-time__icon"></div>
+              </div>
+              <div class="activity-time__timeframe">
+                <p><span class="current">32</span>hrs</p>
+                <p>Last Week - <span class="previous">36</span>hrs</p>
+              </div>
+            </div>
+          </section>
+          <section class="activity-box activity-box__exercise">
+            <div class="activity-time">
+              <div class="activity-time__heading">
+                <h1>Exercise</h1>
+                <div class="activity-time__icon"></div>
+              </div>
+              <div class="activity-time__timeframe">
+                <p><span class="current">32</span>hrs</p>
+                <p>Last Week - <span class="previous">36</span>hrs</p>
+              </div>
+            </div>
+          </section>
+          <section class="activity-box activity-box__social">
+            <div class="activity-time">
+              <div class="activity-time__heading">
+                <h1>Social</h1>
+                <div class="activity-time__icon"></div>
+              </div>
+              <div class="activity-time__timeframe">
+                <p><span class="current">32</span>hrs</p>
+                <p>Last Week - <span class="previous">36</span>hrs</p>
+              </div>
+            </div>
+          </section>
+          <section class="activity-box activity-box__self-care">
+            <div class="activity-time">
+              <div class="activity-time__heading">
+                <h1>Self Care</h1>
+                <div class="activity-time__icon"></div>
+              </div>
+              <div class="activity-time__timeframe">
+                <p><span class="current">32</span>hrs</p>
+                <p>Last Week - <span class="previous">36</span>hrs</p>
+              </div>
+            </div>
+          </section>
+      <section/>
+
+      <script src="./js/app.js"></script>
+  </body>
 </html>

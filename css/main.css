@@ -1,3 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
 
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: #0f1424;
+  color: #fff;
+}
+
+.container {
+  display: grid;
+  grid-gap: 20px 0;
+  justify-content: center;
+  margin: 82px auto;
+}
+
+.activity-menu, .activity-box {
+  width: 328px;
+}
+
+.activity-menu {
+  background-color: #1c1f4a;
+  height: 205px;
+  border-radius: 15px;
+}
+.activity-menu__person {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 140px;
+  border-radius: 15px;
+  background-color: #5847eb;
+}
+.activity-menu__person .text {
+  margin: 15px;
+}
+.activity-menu__person img {
+  height: 72px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+}
+.activity-menu__person p {
+  font-size: 15px;
+  margin: 5px 0;
+  color: #bdc1ff;
+  font-weight: 300;
+}
+.activity-menu__person h1 {
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.activity-menu__options {
+  height: 65px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.activity-menu__options a {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  color: #6f76c8;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.activity-box {
+  position: relative;
+  height: 160px;
+  border-radius: 15px 15px 18px 18px;
+  background-repeat: no-repeat;
+  background-position: 95% -12px;
+}
+
+.activity-time {
+  background-color: #1c1f4a;
+  border-radius: 15px;
+  position: absolute;
+  width: 100%;
+  height: 122px;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.activity-time__heading {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 85%;
+  height: 30px;
+}
+.activity-time__icon {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 25px;
+  background-image: url("../images/icon-ellipsis.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.activity-time__timeframe {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 85%;
+  height: 50px;
+}
+.activity-time__timeframe p {
+  font-size: 28px;
+  font-weight: 300;
+}
+.activity-time__timeframe p:last-child {
+  display: block;
+  position: absolute;
+  right: 0;
+  font-size: 14px;
+  font-weight: 300;
+  color: #bdc1ff;
+}
+
+.activity-box__work {
+  background-color: #ff8c66;
+  background-image: url("../images/icon-work.svg");
+}
+
+.activity-box__play {
+  background-color: #56c2e6;
+  background-image: url("../images/icon-play.svg");
+}
+
+.activity-box__study {
+  background-color: #ff5c7c;
+  background-image: url("../images/icon-study.svg");
+}
+
+.activity-box__exercise {
+  background-color: #4acf81;
+  background-image: url("../images/icon-exercise.svg");
+  background-position: 95% 0px;
+}
+
+.activity-box__social {
+  background-color: #7536d3;
+  background-image: url("../images/icon-social.svg");
+}
+
+.activity-box__self-care {
+  background-color: #f1c65b;
+  background-image: url("../images/icon-self-care.svg");
+}
 
 /*# sourceMappingURL=main.css.map */
