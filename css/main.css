@@ -112,6 +112,9 @@ body {
   justify-content: space-around;
   align-items: center;
 }
+.activity-menu__options .btn-active {
+  color: #fff;
+}
 .activity-menu__options a {
   background-color: transparent;
   border: none;
@@ -264,6 +267,9 @@ body {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-around;
+  }
+  .activity-menu__options .btn-active {
+    color: #fff;
   }
   .activity-menu__options a {
     transition: all 0.2s ease-in-out;
