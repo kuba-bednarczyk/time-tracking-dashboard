@@ -178,6 +178,7 @@ body {
     background-image: url('../images/icon-self-care.svg');
 }
 
+// desktop width
 @media (min-width: 1124px){
     body {
         height: 100vh;
@@ -254,7 +255,6 @@ body {
     .activity-time {
         height: 200px;
         padding: 20px 0;
-        // border: 1px solid brown;
         justify-content: inherit;
         align-items: center;
 
