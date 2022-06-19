@@ -1,76 +1,48 @@
-let timeframe = 'weekly'; //default timeframe
+// get DOM elements
 const container = document.querySelector('.container');
-let cards; //placeholder for work,study, play etc
-
 const menuBtns = document.querySelectorAll('.menu-btn');
+let timeframe = 'weekly'; //default timeframe
 
-// menuBtns.forEach(elem => {
-//     elem.addEventListener('click', menuOnClick);
-// })
-
-// get data from json file and invoke functions on cards
-let data = {};
-
+// fetch data from file
 fetch('./js/data.json')
     .then(res => res.json())
     .then(dataJson => {
 
-        // create cards
-        dataJson.forEach( elem => {
-            container.insertAdjacentHTML("beforeend", createCards(elem, timeframe))
+        // create default cards
+        dataJson.forEach(item => {
+            container.insertAdjacentHTML('beforeend', createCards(item, timeframe));
         });
 
-        // convert array to dict
-        dataJson.forEach(el => {
-            data[el.title] = el.timeframes;
-        });
+        // update cards
+        menuBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                clearCards();
+                activateClickedButton(btn);
+                timeframe = btn.dataset.option;
 
-        cards = document.querySelectorAll('.activity-box');
+                dataJson.forEach(item => {
+                    container.insertAdjacentHTML('beforeend', createCards(item, timeframe));
+                })
+            })
+        })
 });
 
-// Functions:
-
-// const menuOnClick = event => {
-    
-// }
-
-// add white color to clicked button 
+// add active state to clicked button
 const activateClickedButton = (btn) => {
     menuBtns.forEach(btn => btn.classList.remove('btn-active'));
     btn.classList.add('btn-active');
 }
 
-const updateCards = (timeframe) => {
-    cards.forEach(card => {
-        updateSingleCard(card, timeframe);
-    })
+const clearCards = () => {
+    const cards = document.querySelectorAll('.activity-box');
+    cards.forEach(card => card.remove());
 };
 
-
-const updateSingleCard = (card, timeframe) => {
-    const title = card.querySelector('.activity-time__heading h1').innerText;
-    const current = data[title][timeframe]['current'];
-    const previous = data[title][timeframe]['previous'];
-
-    const timeFrameMessage = {
-        "daily": "Yesterday - ",
-        "weekly": "Last Week - ",
-        "monthly": "Last Month - "
-    }
-
-    const currentHrsElem = document.querySelector('.currentHrs');
-    const previousHrsElem = document.querySelector('.previousHrs');
-
-
-    currentHrsElem.innerText = `${current}hrs`;
-    previousHrsElem.innerText = `${timeFrameMessage[timeframe]}${previous}hrs`;
-}
-
-const createCards = (elem, timeframe) => {
-    let title = elem['title'];
-    let titleClass = elem['title'].toLowerCase().replace(" ", "-");
-    let currentTimeframe = elem['timeframes'][timeframe]["current"];
-    let previousTimeframe = elem['timeframes'][timeframe]["previous"];
+const createCards = (item, timeframe) => {
+    let title = item['title'];
+    let titleClass = item['title'].toLowerCase().replace(" ", "-");
+    let currentTimeframe = item['timeframes'][timeframe]["current"];
+    let previousTimeframe = item['timeframes'][timeframe]["previous"];
 
     const timeFrameMessage = {
         "daily": "Yesterday - ",
@@ -93,17 +65,3 @@ const createCards = (elem, timeframe) => {
          </section>
     `;
 };
-
-
-// listener
-menuBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        activateClickedButton(btn);
-
-        const clickedOption = btn.dataset.option;
-        timeframe = clickedOption;
-        console.log(timeframe);
-
-        updateCards(timeframe);
-    })
- })
